@@ -5,6 +5,7 @@ import math
 
 
 def findMaxSubarray(A, low, high):
+    print('findMaxSubarray(', A[low:high + 1], ",", low, ",", high, ")")
     if high == low:  # Base case
         return (low, high, A[low])
     else:
@@ -21,6 +22,8 @@ def findMaxSubarray(A, low, high):
 
 
 def findMaxCrossingSubarray(A, low, mid, high):
+    print('findMaxCrossingSubarray(',
+          A[low:high + 1], ",", low, ",", mid, ",", high, ")")
     leftSum = -10000
     sum = 0
     maxLeft = maxRight = 0
@@ -40,5 +43,5 @@ def findMaxCrossingSubarray(A, low, mid, high):
     return (maxLeft, maxRight, leftSum + rightSum)
 
 
-Array = [3, -11, 2, 8, 7, -100]
+Array = [-13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 10, -5, -22, 15, -4, 7]
 print(findMaxSubarray(Array, 0, len(Array) - 1))
